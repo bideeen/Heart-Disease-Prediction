@@ -19,15 +19,16 @@
     <div class="back">
         <div class="div-center">
             <div class="content">
+                <h1 id="h1">Heart Disease Prediction</h1>
                 <form action="{{ url_for('predict') }}" method="post">
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="age">Age: </label>
-                            <input type="number" name="age" id="age" class="form-control">
+                            <input type="number" name="age" id="age" class="form-control" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="sex">Gender </label>
-                            <select name="sex" id="sex" class="form-control">
+                            <select name="sex" id="sex" class="form-control" >
                                 <option value="1">Male</option>
                                 <option value="0">Female</option>
                             </select>
@@ -43,15 +44,22 @@
                                 <option value="3">Typical Angina</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-8">
+                        <div class="form-group col-md-4">
+                            <label for="exang">Exercise induced angina</label>
+                            <select name="exang" id="exang" class="form-control">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
                             <label for="trestbps">The person’s resting blood pressure</label>
-                            <input type="number" name="trestbps" id="trestbps" class="form-control">
+                            <input type="number" name="trestbps" id="trestbps" class="form-control" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="chol">The person’s cholesterol measurement(mg/dl)</label>
-                            <input type="number" name="chol" id="chol" class="form-control">
+                            <input type="number" name="chol" id="chol" class="form-control" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="fbs">The person’s fasting blood sugar</label>
@@ -72,7 +80,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="thalach">The person’s maximum heart rate achieved</label>
-                            <input type="number" name="thalach" id="thalach" class="form-control">  
+                            <input type="number" name="thalach" id="thalach" class="form-control" required>  
                         </div>
                     </div>
                     <div class="row">
@@ -96,7 +104,7 @@
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="oldpeak">ST depression induced by exercise relative to rest</label>
-                            <input type="number" name="oldpeak" id="oldpeak" class="form-control">
+                            <input type="number" name="oldpeak" id="oldpeak" class="form-control" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="thal">A blood disorder called thalassemia Value</label>

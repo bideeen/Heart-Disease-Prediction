@@ -21,18 +21,19 @@ def predict():
         fbs = request.form['fbs']
         restecg = request.form['restecg']
         thalach = request.form['thalach']
-        ca = request.form['ca']
+        exang = request.form['exang']
         slope = request.form['slope']
         oldpeak = request.form['oldpeak']
+        ca = request.form['ca']
         thal = request.form['thal']
-        data = [age, sex, ct, trestbps, chol, fbs, restecg, thalach, ca, slope, oldpeak, thal]
+        data = np.array([age, sex, ct, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]).reshape(1, -1)
         scaler = StandardScaler()
         scale_data = scaler.fit_transform(data)
-        df = np.array(scale_data).reshape(1, -1)
+        
         
         knn_model = open('models/KNeighborsClassifier(n_neighbors=9).pkl', 'rb')
         clf = joblib.load(knn_model)
-        my_prediction = clf.predict(df)
+        my_prediction = clf.predict(scale_data)
         
     return render_template('result.html', prediction=my_prediction)
 
