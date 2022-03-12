@@ -5,8 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HDP - Result</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    
+    <div class="back">
+        <div class="div-center">
+            <div class="content">
+                <h1 id="h1">Results</h1>
+                {% if prediction == 1%}
+                <h2 style="color:red;">I'm sorry, This patient has an heart disease</h2>
+                {% elif prediction == 0%}
+                <h2 style="color:blue;">Congratulations, Your heart is  (It is a Ham)</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </body>
 </html>

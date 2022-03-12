@@ -1,13 +1,18 @@
 .back {
-    background: #e2e2e2;
+    /* background: #e2e2e2; */
     width: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
+    background-image: url('../hd1.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /* background-position: 100%; */
+    background-size: cover;
 }
 
 .div-center {
-    width: 400px;
+    width: 700px;
     height: 400px;
     background-color: #fff;
     position: absolute;
@@ -27,4 +32,8 @@
 div.content {
     display: table-cell;
     vertical-align: middle;
+}
+#h1{
+    text-align: center;
+    justify-content: center;
 }
